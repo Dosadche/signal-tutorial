@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <h1>My own signal tutorial</h1>
+
+    @for (i of vehicles(); track i.id) {
+        <button (click)="getVehicle(i.id)" class="btn">
+            {{ i.name }}
+        </button>
+    }
+    @if (selectedVehicle()) {
+        @if (moreThen1000()) {
+            <p>Vehicle mileage is more then 2000</p>
+        }
+        <div class="selected-vehicle">
+            <p>
+                <b>Name: </b> {{ selectedVehicle.name }}
+            </p>
+            <p>
+                <b>Mileage: </b> {{ selectedVehicle().mileage }}
+            </p>
+            <p>
+                <b>Registration Number: </b> {{ selectedVehicle().registrationNumber }}
+            </p>
+            <p>
+                <b>Driver: </b> {{ selectedVehicle().driver }}
+            </p>
+        </div>
+    } @else if (loading()) {
+        <p>Loading...</p>
+    } @else {
+        <p>No selected vehicle</p>
+    }
+</div>

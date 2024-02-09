@@ -1,0 +1,17 @@
+:host {
+    background-color: #452e40;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    text-align: center;
+    .selected-vehicle {
+        text-align: center;
+        background: rgb(74, 74, 74);
+        padding: 10px;
+    }
+}
